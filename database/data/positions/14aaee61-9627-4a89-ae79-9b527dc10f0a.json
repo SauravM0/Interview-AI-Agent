@@ -1,0 +1,22 @@
+{
+  "id": "14aaee61-9627-4a89-ae79-9b527dc10f0a",
+  "title": "Data Scientist",
+  "department": "Data",
+  "required_skills": [
+    "Python",
+    "SQL",
+    "Machine Learning",
+    "Statistics"
+  ],
+  "preferred_skills": [
+    "PyTorch",
+    "TensorFlow",
+    "Big Data",
+    "Data Visualization"
+  ],
+  "min_experience": 1,
+  "description": "",
+  "status": "active",
+  "created_at": "2025-05-14T19:57:21.525324",
+  "updated_at": "2025-05-14T19:57:21.525324"
+}

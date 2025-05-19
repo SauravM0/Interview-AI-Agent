@@ -1,0 +1,23 @@
+
+** Message not delivered **
+
+Your message couldn't be delivered to pgpcs@course.mygreatlearning.com because the remote server is misconfigured. See technical details below for more information.
+
+
+
+The response from the remote server was:
+550 5.7.1 relaying denied
+
+
+Hello Great Lakes Cyber Security,
+            
+            Thank you for your application! We would like to schedule an interview with you.
+            
+            Your interview has been scheduled for:
+            Thursday, May 15, 2025 at 05:04 PM IST
+            
+            We will call you at the scheduled time.
+            
+            Best regards,
+            Interview Team
+

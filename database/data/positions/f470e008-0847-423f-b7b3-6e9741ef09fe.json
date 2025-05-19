@@ -1,0 +1,22 @@
+{
+  "id": "f470e008-0847-423f-b7b3-6e9741ef09fe",
+  "title": "Software Engineer",
+  "department": "Engineering",
+  "required_skills": [
+    "Python",
+    "JavaScript",
+    "Git",
+    "API Development"
+  ],
+  "preferred_skills": [
+    "TypeScript",
+    "React",
+    "Docker",
+    "AWS"
+  ],
+  "min_experience": 2,
+  "description": "",
+  "status": "active",
+  "created_at": "2025-05-14T19:57:21.514830",
+  "updated_at": "2025-05-14T19:57:21.514830"
+}

@@ -1,0 +1,29 @@
+
+** Address not found **
+
+Your message wasn't delivered to newsletters@hi.wellfound.com because the domain hi.wellfound.com couldn't be found. Check for typos or unnecessary spaces and try again.
+
+
+
+The response was:
+
+DNS Error: DNS type 'mx' lookup of hi.wellfound.com responded with code NOERROR
+DNS type 'mx' lookup of hi.wellfound.com had no relevant answers.
+DNS type 'aaaa' lookup of hi.wellfound.com responded with code NOERROR
+DNS type 'aaaa' lookup of hi.wellfound.com had no relevant answers.
+DNS type 'a' lookup of hi.wellfound.com responded with code NOERROR
+DNS type 'a' lookup of hi.wellfound.com had no relevant answers.
+
+
+Hello Wellfound,
+            
+            Thank you for your application! We would like to schedule an interview with you.
+            
+            Your interview has been scheduled for:
+            Thursday, May 15, 2025 at 07:25 PM IST
+            
+            We will call you at the scheduled time.
+            
+            Best regards,
+            Interview Team
+

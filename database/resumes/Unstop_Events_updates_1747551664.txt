@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>General</title>
+    <meta name="author" content="" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting">
+    <style type="text/css">
+        @import  url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        body {
+            width: auto;
+            background-color: #F6F8FA;
+            margin: 0 auto;
+            padding: 0;
+            font-size: 14px;
+            -webkit-text-size-adjust: 100% !important;
+            -ms-text-size-adjust: 100% !important;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Inter", sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span,
+        a,
+        strong,
+        div,
+        td {
+            font-family: "Inter", sans-serif;
+        }
+
+        img {
+            border: 0 !important;
+            outline: none !important;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+        .h_text_color:hover {
+            color: #0073e6 !important;
+            text-decoration: underline !important;
+        }
+        .footer_sect a:hover {
+            opacity: .8;
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0px;
+            mso-table-rspace: 0px;
+        }
+
+        .text_box {
+            font-size: 15px;
+            color: #434343;
+            line-height: 22px;
+            font-weight: 400;
+            font-family: "Inter", sans-serif;
+        }
+        .text_box p {
+            font-size: 15px;
+            color: #434343;
+            margin: 0 0 15px;
+            line-height: 22px;
+            font-weight: 400;
+            font-family: "Inter", sans-serif;
+        }
+
+        .text_box strong {
+            font-weight: 700;
+            font-family: "Inter", sans-serif;
+        }
+
+        .text_box ul,
+        .text_box ol {
+            margin: 10px 0 15px;
+            padding: 0;
+            padding-left: 30px;
+            font-family: "Inter", sans-serif;
+        }
+
+        .text_box ul li,
+        .text_box ol li {
+            font-size: 15px;
+            color: #434343;
+            margin: 0 0 10px;
+            line-height: 20px;
+            font-weight: 400;
+            font-family: "Inter", sans-serif;
+        }
+
+        .text_box a {
+            color: #0073e6;
+            font-family: "Inter", sans-serif;
+        }
+        .text_box p img {
+            display: inline-block;
+        }
+
+        @media (max-width: 600px) {
+            .full {
+                width: 100% !important;
+            }
+            .pdng {
+                padding: 20px 15px !important;
+            }
+
+            .footer_sect {
+                display: block;
+            }
+            .footer_sect .follow {
+                border-right: 0 !important;
+                padding-right: 0 !important;
+                text-align: center;
+                width: 100%;
+                display: block;
+                margin-bottom: 15px;
+            }
+            .footer_store {
+                width: 100%;
+                text-align: center;
+                display: block;
+            }
+            .footer_store .coin {
+                padding-left: 0 !important;
+            }
+            .footer_sect p {
+                font-size: 13px !important;
+                margin-bottom: 10px !important;
+            }
+            .footer_sect img {
+                width: 35px !important;
+            }
+            .disclaimer {
+                padding: 20px 15px 0px !important;
+            }
+            .queries p,
+            .disclaimer p {
+                font-size: 13px !important;
+            }
+            .queries p br {
+                display: none;
+            }
+            .queries .copyright {
+                margin-top: 5px !important;
+            }
+            .title {
+                font-size: 16px !important;
+                line-height: 22px !important;
+            }
+            .sub_title {
+                font-size: 14px !important;
+                line-height: 19px !important;
+                margin-top: 15px !important;
+            }
+            .opp_list {
+                display: block;
+            }
+            .opp_list td {
+                display: block;
+                width: 100% !important;
+                padding-bottom: 15px !important;
+            }
+            .view_more {
+                margin-top: 0 !important;
+            }
+
+            .hedr_bg {
+                padding: 10px 15px 20px !important;
+            }
+            .logo_box {
+                width: 100px !important;
+            }
+            .logo_box div {
+                width: 100px !important;
+                height: 100px !important;
+            }
+            .cptn_box {
+                padding-left: 15px !important;
+                padding-right: 0 !important;
+            }
+            .cptn_box h2 {
+                margin: 0px 0 5px !important;
+                font-size: 16px !important;
+                line-height: 20px !important;
+            }
+            .cptn_box p {
+                font-size: 15px !important;
+                line-height: 21px !important;
+            }
+            .unstop_icon {
+                margin-bottom: 15px;
+            }
+            .unstop_icon img {
+                width: 75px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: #ffffff; width: 100%; margin: 0; padding: 0;">
+        <style>
+ 	@media (max-width: 600px) {
+		.full {
+			width: 100% !important;
+		}
+		.pdng {
+			padding: 30px 16px !important;
+		}
+		.hedr_higt_1 {
+			min-height: 196px !important;
+		}
+		.header {
+			padding: 30px 16px !important;
+		}
+
+		.header .logo {
+			height: 70px !important;
+		}
+
+		.header .h1 {
+			font-size: 20px !important;
+			line-height: 24px !important;
+			padding-top: 12px !important;
+		}
+	}
+</style>
+
+<table 
+	cellpadding="0" 
+	cellspacing="0" 
+	align="center" 
+	border="0" 
+	width="700" 
+	class="full hedr_higt_1 br0" 
+	style="
+		background: #eaf4fe;
+		background-image: url(https://d8it4huxumps7.cloudfront.net/uploads/images/6643444858bad_top_vector.png);
+		background-size: 98%;
+		background-position: top right;
+		background-repeat: no-repeat;
+		min-height: 242px;
+	">
+	<tbody>
+		<tr>
+			<td 
+				class="header" 
+				style="
+					padding: 42px 50px;
+					background-image: url(https://d8it4huxumps7.cloudfront.net/uploads/images/6643445d4d288_bottom_vector.png);
+					background-size: 98%;
+					background-position: bottom left;
+					background-repeat: no-repeat;
+				"
+			>
+				<a href="https://unstop.com/practice/mock-test/weekly-coding-challenge-1191083" target="_blank" style="display: block; color:inherit; text-decoration: none;">
+					<table style="width: 100%;">
+						<tr>
+							<td style="text-align: center;">
+								<div style="display: inline-block;">
+									<div 
+										class="logo" 
+										width="70" 
+										style="
+											width: 70px;
+											min-width:70px;
+											height: 70px;
+											background: #fff;
+											border-radius: 8px;
+											background-image: url(https://d8it4huxumps7.cloudfront.net/uploads/images/un-emails/white-bg.png);
+											background-size: cover;
+											vertical-align: middle;
+											box-sizing: border-box;
+											display: table-cell;
+										"
+									>
+										<img 
+											src="https://d8it4huxumps7.cloudfront.net/uploads/images/75x75/677b72efe47f9_unstop-logo.jpg" 
+											alt="" 
+											style="
+												box-sizing: border-box;
+												border: 0!important;
+												outline: none!important;
+												display: block;
+												max-height: 80%;
+												max-width: 80%;
+												margin: auto;
+											" 
+											width="55"
+										>
+									</div>
+								</div>
+								<div 
+									class="h1" 
+									style="
+										font-family: 'Inter', sans-serif;
+										color: #1c1c1c;
+										font-size: 28px;
+										line-height: 36px;
+										font-weight: 600;
+										padding-top: 20px;
+										text-align: center;
+									"
+								>
+									Weekly Coding Challenge
+								</div>
+							</td>
+						</tr>
+					</table>
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+        <table
+            cellpadding="0"
+            cellspacing="0"
+            align="center"
+            bgcolor="#ffffff"
+            border="0"
+            width="700"
+            class="full"
+        >
+            <tbody>
+                <tr>
+                    <td class="pdng" style="padding: 40px 30px; text-align: left;">
+                        <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #434343; margin: 0 0 15px; line-height: 20px; font-weight: 400;">
+                            Hi <strong>Saurav Madake</strong>,
+                        </p>
+
+                        <div class="text_box" style="font-family: 'Inter', sans-serif; font-size: 15px; color: #434343; margin: 0; line-height: 22px; font-weight: 400;">
+                            <p><span data-sheets-root="1"><a href="https://unstop.com/practice/mock-test/weekly-coding-challenge-1191083"><strong>Weekly Coding Challenge 30</strong></a> is now live.<br /><br />Solve now and win big. <a href="https://unstop.com/practice/mock-test/weekly-coding-challenge-1191083"><strong>CLICK HERE</strong></a><br /><br />All the Best!</span><br /><br />Regards,<br />Unstop Team</p>
+                        </div>
+
+                        <div style="padding-top:20px; text-align:center;">
+                            <a href="https://unstop.com/practice/mock-test/weekly-coding-challenge-1191083" target="_blank" style="display: inline-block; padding: 12px 32px; background: #0073E6; border-radius: 50px; font-weight: 500; font-size: 14px; line-height: 16px; color: #FFFFFF; cursor: pointer; box-sizing: border-box;">
+                                View Opportunity
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+        <style>
+	.footer_sect a:hover {
+		opacity: .8;
+	}
+	@media (max-width: 600px) {
+		.full {
+			width: 100% !important;
+		}
+		.footer_ui {
+			border-radius: 8px;
+		}
+		.footer_ui .footer_pdng {
+			padding-left: 16px !important;
+			padding-right: 16px !important;
+		}
+		.footer_ui .un_logo {
+			width: 100px !important; 
+		}
+	}
+</style>
+
+<table cellpadding="0" cellspacing="0" align="center" border="0" width="700" class="full footer_ui" style="background: #f2f2f2;">
+	<tbody>
+		<tr>
+			<td class="footer_pdng" style="padding: 24px 30px;">
+				<table cellpadding="0" cellspacing="0" align="center" border="0" style="width: 100%;">
+					<tbody>
+						<tr>
+							<td style="border-bottom: 1px solid #DEDEDE; padding-bottom: 20px; text-align: center;">
+								<a 
+									href="https://unstop.com/pro"
+									style="display: inline-block; text-decoration: none;"
+									target="_blank"
+								>
+									<img
+										src="https://d8it4huxumps7.cloudfront.net/uploads/images/66434fd4a4152_unstop_logo.png"
+										alt="Unstop pro logo" style="display: block; width: 120px;"
+										class="un_logo"
+									>
+								</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td style="padding-top: 20px; text-align: center;">
+								<p
+									style="font-family: 'Inter', sans-serif; color: #1c1c1c; font-size: 12px; font-weight: 500; margin: 0 0 10px; text-align: center;">
+									Join our evergrowing unstoppable community
+								</p>
+
+								<div style="text-align: center;">
+									<a href="https://www.instagram.com/unstop.world/"
+										style="display: inline-block; text-decoration: none; margin-right: 10px; width: 40px; height: 40px; background: #FAFAFA; border-radius: 50px;"
+										target="_blank">
+										<img
+											src="https://d8it4huxumps7.cloudfront.net/uploads/images/66433aee6e146_instagram.png"
+											alt="Instagram Icon" style="display: block; width: 40px;">
+									</a>
+
+									<a href="https://www.linkedin.com/company/unstop/"
+										style="display: inline-block; text-decoration: none; margin-right: 10px; width: 40px; height: 40px; background: #FAFAFA; border-radius: 50px;"
+										target="_blank">
+										<img
+											src="https://d8it4huxumps7.cloudfront.net/uploads/images/66433aff63c9b_linkedin.png"
+											alt="Linkedin Icon" style="display: block; width: 40px;">
+									</a>
+
+									<a href="https://t.me/+ON15qceSy-IyZjY9"
+										style="display: inline-block; text-decoration: none; margin-right: 10px; width: 40px; height: 40px; background: #FAFAFA; border-radius: 50px;"
+										target="_blank">
+										<img
+											src="https://d8it4huxumps7.cloudfront.net/uploads/images/66433b096c58b_telegram.png"
+											alt="Telegram Icon" style="display: block; width: 40px;">
+									</a>
+
+									<a 
+										href="https://www.youtube.com/c/Unstop_World"
+										style="display: inline-block; text-decoration: none; width: 40px; height: 40px; background: #FAFAFA; border-radius: 50px;" 
+										target="_blank"
+									>
+										<img
+											src="https://d8it4huxumps7.cloudfront.net/uploads/images/66433b12a37a3_youtube.png"
+											alt="Youtube Icon" style="display: block; width: 40px;">
+									</a>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td style="padding-top: 20px; text-align: center;">
+								<p style="font-family: 'Inter', sans-serif; color: #1c1c1c; font-size: 12px; font-weight: 500; margin: 0 0 10px; text-align: center;">
+									Get the Unstop app
+								</p>
+								<div>
+									<a href="https://play.google.com/store/apps/details?id=com.dare2compete.app"
+										style="display: inline-block; text-decoration: none; margin-right: 10px;"
+										target="_blank">
+										<img
+											src="https://d8it4huxumps7.cloudfront.net/uploads/images/6641f370d8dc5_google_play.png"
+											alt="Play Store Icon"
+											style="display: block; width: 120px; border: 1px solid #1c1c1c !important; border-radius: 50px; background: #1c1c1c;">
+									</a>
+
+									<a href="https://apps.apple.com/in/app/unstop-formerly-dare2compete/id1601170365"
+										style="display: inline-block; text-decoration: none;" target="_blank">
+										<img
+											src="https://d8it4huxumps7.cloudfront.net/uploads/images/6641f38f1c761_app_store.png"
+											alt="App Store Icon"
+											style="display: block; width: 120px; border: 1px solid #1c1c1c !important; border-radius: 50px; background: #1c1c1c;">
+									</a>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td style="padding-top: 20px; text-align: center;">
+								<span
+									style="font-family: 'Inter', sans-serif; text-align: center; color: #1c1c1c; font-size: 12px; font-weight: 500; border-right: 1px solid #D9D9D9; padding-right: 12px; margin-right: 12px;">
+									Queries? We're just one email away: <a href="mailto:support@unstop.com" class="h_text_color"
+										style="font-family: 'Inter', sans-serif; color: #1c1c1c; text-decoration: none;">support@unstop.com</a>
+								</span>
+
+								<span style="font-family: 'Inter', sans-serif; text-align: center; color: #1c1c1c; font-size: 12px; font-weight: 500;">
+									© 2025 <a class="h_text_color" href="https://unstop.com/"
+										style="font-family: 'Inter', sans-serif; color: #1c1c1c; text-decoration: none;">Unstop</a>.
+									All rights reserved
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>    </div>
+</body>
+
+</html>
+
+
