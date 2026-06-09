@@ -1,43 +1,196 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
+################################################################################
+# PROJECT: Interview AI - Multi-stack (Python FastAPI + Next.js + Docker)
+# This .gitignore covers: Python, Node.js, Docker, IDE, OS, and build artifacts
+################################################################################
+
+# ── PYTHON ────────────────────────────────────────────────────────────────────
+# Virtual environments
 .venv/
 .venv_wsl/
 venv/
 ENV/
 env/
-*.egg-info/
-dist/
-build/
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Node
+# Python bytecode and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Python distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Python unit tests
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# ── NODE.JS / NEXT.JS ─────────────────────────────────────────────────────────
+# Dependencies
 node_modules/
+package-lock.json.bak
+
+# Build outputs
 .next/
 out/
+dist/
+build/
 *.tsbuildinfo
 
-# Environment
+# Next.js caching
+.next/cache/
+
+# Testing
+.nyc_output/
+coverage/
+
+# ── ENVIRONMENT & SECRETS ─────────────────────────────────────────────────────
 .env
 .env.local
 .env.*.local
+.env.production.local
+.env.development.local
+.env.test.local
+*.pem
+*.key
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-npm-debug.log*
-
-# Database
+# ── DATABASE & DATA ───────────────────────────────────────────────────────────
 *.db
 *.sqlite
+*.sqlite3
+*.psql
+data/
+*.sql.bak
+
+# ── DOCKER ────────────────────────────────────────────────────────────────────
+.dockerignore
+docker-compose.override.yaml
+.docker/
+
+# Docker volumes (if stored locally)
+redis_data/
+postgres_data/
+
+# ── IDE & EDITOR ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.project
+.pydevproject
+.settings/
+*.code-workspace
+
+# Vim
+.vim/
+.vimrc.local
+
+# ── OPERATING SYSTEM ──────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Windows
+Thumbs.db
+*.lnk
+$RECYCLE.BIN/
+
+# macOS
+*.swp
+*.swo
+*~
+
+# ── LOGS & TEMPORARY FILES ────────────────────────────────────────────────────
+*.log
+*.logs
+npm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+.DS_Store
+
+# ── SYSTEM FILES ──────────────────────────────────────────────────────────────
+.AppleDouble
+.LSOverride
+*.sublime-project
+*.sublime-workspace
+
+# ── PROJECT SPECIFIC ──────────────────────────────────────────────────────────
+# LiveKit server outputs
+livekit.yaml.bak
+
+# Agent outputs
+agent_output/
+evaluation_output/
+
+# Testing
+test_output/
+.pytest_cache/
+.hypothesis/
+
+# Miscellaneous
+.cache/
+*.egg
+*.egg-info/
+.eggs/
+
+# ── CI/CD ─────────────────────────────────────────────────────────────────────
+.github/workflows/temp/
+.gitlab-ci.local.yml
+
+# ── BACKUP & ARCHIVES ─────────────────────────────────────────────────────────
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.backup
+*.old
+
+# ── LOCAL DEVELOPMENT ─────────────────────────────────────────────────────────
+local/
+tmp/
+temp/
+dev-notes/
+.env.override
