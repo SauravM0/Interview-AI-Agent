@@ -3,7 +3,7 @@
 This guide deploys:
 
 - Frontend: Vercel at `https://interview-ai-agent.vercel.app`
-- Backend API: Render at `https://interview-ai-api.onrender.com`
+- Backend API: Render at `https://interview-ai-agent-kpc8.onrender.com`
 - Database: Supabase Postgres
 - LiveKit server: Docker-based self-hosting, with an important production warning below
 - AI interview agent: Fly.io, with the event-driven direction you want
@@ -38,7 +38,7 @@ Use these exact public URLs:
 
 ```text
 FRONTEND_URL=https://interview-ai-agent.vercel.app
-BACKEND_URL=https://interview-ai-api.onrender.com
+BACKEND_URL=https://interview-ai-agent-kpc8.onrender.com
 ```
 
 For LiveKit, choose one:
@@ -115,7 +115,7 @@ Runtime: Python
 Root Directory: leave empty
 Build Command: pip install -r requirements.txt
 Start Command: python api_server.py
-Public URL: https://interview-ai-api.onrender.com
+Public URL: https://interview-ai-agent-kpc8.onrender.com
 ```
 
 Important: this repo has `runtime.txt` with:
@@ -190,7 +190,7 @@ Do not reuse the local dev token if this will be public.
 After Render deploys:
 
 ```text
-https://interview-ai-api.onrender.com/docs
+https://interview-ai-agent-kpc8.onrender.com/docs
 ```
 
 If `/docs` opens, the API process is running.
@@ -198,7 +198,7 @@ If `/docs` opens, the API process is running.
 Then test:
 
 ```text
-https://interview-ai-api.onrender.com/api/candidates
+https://interview-ai-agent-kpc8.onrender.com/api/candidates
 ```
 
 If you see `[]` or candidate JSON, the API and DB are alive.
@@ -299,7 +299,7 @@ Choose a nearby region.
 fly secrets set LIVEKIT_URL="wss://YOUR-LIVEKIT-DOMAIN"
 fly secrets set LIVEKIT_API_KEY="YOUR_PRODUCTION_LIVEKIT_KEY"
 fly secrets set LIVEKIT_API_SECRET="YOUR_PRODUCTION_LIVEKIT_SECRET"
-fly secrets set API_URL="https://interview-ai-api.onrender.com"
+fly secrets set API_URL="https://interview-ai-agent-kpc8.onrender.com"
 fly secrets set API_SECRET_TOKEN="YOUR_RENDER_API_SECRET_TOKEN"
 fly secrets set GROQ_API_KEY="YOUR_GROQ_KEY"
 fly secrets set DEEPGRAM_API_KEY="YOUR_DEEPGRAM_KEY"
@@ -357,27 +357,41 @@ Keep those in Render only.
 
 Create Vercel project:
 
+Recommended with the repo-level `vercel.json`:
+
+```text
+Framework: Next.js
+Root Directory: leave empty / repository root
+Install Command: npm --prefix dashboard install
+Build Command: npm --prefix dashboard run build
+Output Directory: dashboard/.next
+Production URL: https://interview-ai-agent.vercel.app
+```
+
+Alternative without using root `vercel.json`:
+
 ```text
 Framework: Next.js
 Root Directory: dashboard
-Build Command: npm run build
 Install Command: npm install
+Build Command: npm run build
 Output Directory: leave default
-Production URL: https://interview-ai-agent.vercel.app
 ```
+
+If Vercel says `No Output Directory named "public" found`, your Vercel project is configured as a static site or has `public` set as the output directory. Change the Framework Preset to Next.js and remove `public` from Output Directory.
 
 ### Vercel Environment Variables
 
 Only add this:
 
 ```text
-NEXT_PUBLIC_API_URL=https://interview-ai-api.onrender.com
+NEXT_PUBLIC_API_URL=https://interview-ai-agent-kpc8.onrender.com
 ```
 
 Optional for rewrites only:
 
 ```text
-API_URL=https://interview-ai-api.onrender.com
+API_URL=https://interview-ai-agent-kpc8.onrender.com
 ```
 
 Do not add these to Vercel:
@@ -430,7 +444,7 @@ If any step fails, check in this order:
 Check Vercel:
 
 ```text
-NEXT_PUBLIC_API_URL=https://interview-ai-api.onrender.com
+NEXT_PUBLIC_API_URL=https://interview-ai-agent-kpc8.onrender.com
 ```
 
 Check Render CORS:
@@ -543,8 +557,8 @@ http://localhost:3000
 ### Vercel
 
 ```text
-NEXT_PUBLIC_API_URL=https://interview-ai-api.onrender.com
-API_URL=https://interview-ai-api.onrender.com
+NEXT_PUBLIC_API_URL=https://interview-ai-agent-kpc8.onrender.com
+API_URL=https://interview-ai-agent-kpc8.onrender.com
 ```
 
 ### Render Backend
@@ -568,7 +582,7 @@ DEEPGRAM_API_KEY=<production Deepgram key>
 LIVEKIT_URL=<same production LiveKit URL as Render>
 LIVEKIT_API_KEY=<same production LiveKit key as Render>
 LIVEKIT_API_SECRET=<same production LiveKit secret as Render>
-API_URL=https://interview-ai-api.onrender.com
+API_URL=https://interview-ai-agent-kpc8.onrender.com
 API_SECRET_TOKEN=<same token as Render>
 GROQ_API_KEY=<production Groq key>
 DEEPGRAM_API_KEY=<production Deepgram key>
