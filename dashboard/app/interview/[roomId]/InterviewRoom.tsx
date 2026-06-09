@@ -10,29 +10,31 @@ import { useEffect, useState } from "react";
 
 interface InterviewRoomProps {
     roomId: string;
-    url: string;
 }
 
-export function InterviewRoom({ roomId, url }: InterviewRoomProps) {
+export function InterviewRoom({ roomId }: InterviewRoomProps) {
     const [token, setToken] = useState("");
+    const [url, setUrl] = useState("");
     const [shouldConnect, setShouldConnect] = useState(false);
     const [interviewActive, setInterviewActive] = useState(false);
 
     useEffect(() => {
         (async () => {
             try {
+                const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
                 const resp = await fetch(
-                    `/api/livekit/token?roomName=${roomId}&participantName=Candidate`
+                    `${apiBase}/api/interviews/generate-token?room_name=${encodeURIComponent(roomId)}&identity=Candidate&name=Candidate`
                 );
                 const data = await resp.json();
                 setToken(data.token);
+                setUrl(data.url);
             } catch (e) {
                 console.error(e);
             }
         })();
     }, [roomId]);
 
-    if (!token) {
+    if (!token || !url) {
         return (
             <div className="flex items-center justify-center h-screen bg-black text-white">
                 Loading...

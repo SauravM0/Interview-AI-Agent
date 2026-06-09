@@ -966,6 +966,6 @@ def get_interview(interview_id: str):
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.getenv("API_PORT", 8001))
+    port = int(os.getenv("PORT") or os.getenv("API_PORT", 8001))
     host = os.getenv("API_HOST", "0.0.0.0")
     uvicorn.run(app, host=host, port=port)

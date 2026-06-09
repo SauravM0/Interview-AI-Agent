@@ -1,4 +1,3 @@
-import { AccessToken } from 'livekit-server-sdk';
 import { ActiveInterviewRoom } from '@/components/ActiveInterviewRoom';
 import { InterviewReport } from '@/components/InterviewReport';
 
@@ -7,7 +6,8 @@ interface PageProps {
 }
 
 async function getInterview(id: string) {
-    const res = await fetch(`http://127.0.0.1:8000/api/interviews/${id}`, { cache: 'no-store' });
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+    const res = await fetch(`${apiUrl}/api/interviews/${id}`, { cache: 'no-store' });
     if (!res.ok) {
         if (res.status === 404) return null;
         throw new Error(`Failed to fetch interview: ${res.statusText}`);
@@ -30,32 +30,24 @@ export default async function InterviewPage({ params }: PageProps) {
         return <InterviewReport data={interview} />;
     }
 
-    // Otherwise (PENDING, SCHEDULED, IN_PROGRESS), show the Active Room
-    const apiKey = process.env.LIVEKIT_API_KEY;
-    const apiSecret = process.env.LIVEKIT_API_SECRET;
-    const livekitUrl = process.env.LIVEKIT_URL || "ws://localhost:7880";
-
-    if (!apiKey || !apiSecret) {
-        return <div>Error: LiveKit Server not configured</div>;
-    }
-
     const roomName = interview.room_name || `interview-${id}`;
     const participantName = interview.candidate_name || "Candidate";
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+    const tokenRes = await fetch(
+        `${apiUrl}/api/interviews/generate-token?room_name=${encodeURIComponent(roomName)}&identity=${encodeURIComponent(participantName)}&name=${encodeURIComponent(participantName)}`,
+        { cache: 'no-store' }
+    );
 
-    const at = new AccessToken(apiKey, apiSecret, { identity: participantName });
-    at.addGrant({
-        roomJoin: true,
-        room: roomName,
-        canPublish: true,
-        canSubscribe: true,
-    });
+    if (!tokenRes.ok) {
+        return <div>Error: unable to create LiveKit interview token</div>;
+    }
 
-    const token = await at.toJwt();
+    const tokenData = await tokenRes.json();
 
     return (
         <ActiveInterviewRoom
-            token={token}
-            serverUrl={livekitUrl}
+            token={tokenData.token}
+            serverUrl={tokenData.url}
             candidateName={participantName}
         />
     );
