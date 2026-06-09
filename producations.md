@@ -124,7 +124,19 @@ Important: this repo has `runtime.txt` with:
 python-3.11.11
 ```
 
-Render must use Python 3.11 for this backend. If Render uses Python 3.14, dependency installation can fail at `pydantic-core` with:
+It also has `.python-version` with:
+
+```text
+3.11.11
+```
+
+Render must use Python 3.11 for this backend. To force it, also add this Render environment variable:
+
+```text
+PYTHON_VERSION=3.11.11
+```
+
+If Render uses Python 3.14, dependency installation can fail at `pydantic-core` with:
 
 ```text
 error: metadata-generation-failed
@@ -132,7 +144,7 @@ Encountered error while generating package metadata.
 pydantic-core
 ```
 
-That error is not your app code. It means Render selected a Python version that is too new for the pinned dependency set. Commit and push `runtime.txt`, then redeploy.
+That error is not your app code. It means Render selected a Python version that is too new for the pinned dependency set. Commit and push `runtime.txt` and `.python-version`, add `PYTHON_VERSION=3.11.11` in Render, then redeploy with **Clear build cache & deploy**.
 
 The backend now reads Render's `PORT`, so this works:
 
@@ -151,6 +163,7 @@ ENV=production
 
 API_SECRET_TOKEN=<generate a new production secret>
 ALLOWED_ORIGINS=https://interview-ai-agent.vercel.app,http://localhost:3000,http://127.0.0.1:3000
+PYTHON_VERSION=3.11.11
 
 DATABASE_URL=<your Supabase Session Pooler connection string>
 
