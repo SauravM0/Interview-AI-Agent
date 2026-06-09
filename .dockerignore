@@ -1,0 +1,12 @@
+.venv
+.venv_wsl
+__pycache__
+*.pyc
+.pytest_cache
+.git
+.gitignore
+node_modules
+.next
+*.db
+.env.local
+.DS_Store

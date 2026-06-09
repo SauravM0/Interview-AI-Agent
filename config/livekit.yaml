@@ -1,0 +1,18 @@
+port: 7880
+rtc:
+  port_range_start: 50000
+  port_range_end: 50050
+  use_external_ip: false
+redis:
+  address: recruitment-redis:6379
+keys:
+  devkey: secret1234567890123456789012345678901234567890
+room:
+  auto_create: true
+  empty_timeout: 300
+  max_participants: 100
+logging:
+  level: info
+  sample: false
+
+# Made with Bob

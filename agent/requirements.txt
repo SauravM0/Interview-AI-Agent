@@ -1,0 +1,7 @@
+livekit-agents>=1.5.17
+livekit-plugins-groq>=1.5.17
+livekit-plugins-deepgram>=1.5.17
+livekit-plugins-silero>=1.5.17
+groq>=0.9.0
+python-dotenv==1.0.1
+httpx==0.28.1

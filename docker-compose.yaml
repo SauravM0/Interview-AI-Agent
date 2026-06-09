@@ -1,0 +1,57 @@
+services:
+  livekit:
+    image: livekit/livekit-server:latest
+    container_name: recruitment-ai-livekit-1
+    command: ["--config", "/livekit.yaml"]
+    restart: unless-stopped
+    ports:
+      - "7880:7880"
+      - "7881:7881"
+      - "50000-50050:50000-50050/udp"
+    volumes:
+      - ./config/livekit.yaml:/livekit.yaml:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:7880/ || exit 1"]
+      interval: 3s
+      timeout: 2s
+      retries: 20
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    container_name: recruitment-redis
+    command: redis-server --save 60 1 --loglevel warning
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  agent:
+    build:
+      context: .
+      dockerfile: agent/Dockerfile
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GROQ_API_KEY_2=${GROQ_API_KEY_2:-}
+      - GROQ_API_KEY_3=${GROQ_API_KEY_3:-}
+      - GROQ_LLM_MODEL=${GROQ_LLM_MODEL:-llama-3.3-70b-versatile}
+      - GROQ_LLM_FALLBACK_MODEL=${GROQ_LLM_FALLBACK_MODEL:-llama-3.1-8b-instant}
+      - GROQ_STT_MODEL=${GROQ_STT_MODEL:-whisper-large-v3-turbo}
+      - GROQ_EVAL_MODEL=${GROQ_EVAL_MODEL:-llama-3.3-70b-versatile}
+      - LIVEKIT_URL=ws://livekit:7880
+      - LIVEKIT_API_KEY=${LIVEKIT_API_KEY}
+      - LIVEKIT_API_SECRET=${LIVEKIT_API_SECRET}
+      - API_URL=${AGENT_API_URL:-http://host.docker.internal:8000}
+      - API_SECRET_TOKEN=${API_SECRET_TOKEN}
+      - DEEPGRAM_API_KEY=${DEEPGRAM_API_KEY}
+      - DEEPGRAM_TTS_MODEL=${DEEPGRAM_TTS_MODEL:-aura-2-andromeda-en}
+      - TTS_PROVIDER=${TTS_PROVIDER:-deepgram}
+    depends_on:
+      - livekit
+    restart: unless-stopped
+    command: python agent/run_all.py start
+
+volumes:
+  redis_data:
